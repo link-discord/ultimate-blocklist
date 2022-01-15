@@ -60,10 +60,12 @@ async function main() {
         fullList = fullList.sort().map(line => `0.0.0.0 ${line}`)
         const comment = generateComment(name, fullList)
         const output = `${comment}\n${fullList.join('\n')}`
+
         const fullListNL = fullList.map(line => line.replace('0.0.0.0', '').trim())
         const commentNL = generateComment(`${name} (NL)`, fullListNL)
         const outputNL = `${commentNL}\n${fullListNL.join('\n')}`
-        const fullListAdguard = fullList.map(line => `||${line}^`)
+
+        const fullListAdguard = fullList.map(line => `||${line.replace('0.0.0.0', '')}^`.trim())
         const commentAdguard = generateComment(`${name} (Adguard)`, fullListAdguard)
         const outputAdguard = `${commentAdguard}\n${fullListAdguard.join('\n')}`
 
@@ -73,4 +75,6 @@ async function main() {
     }
 }
 
-main().then(() => { console.log('Finished updating all the list files') })
+main().then(() => {
+    console.log('Finished updating all the list files')
+})
