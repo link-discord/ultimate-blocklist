@@ -57,13 +57,19 @@ async function main() {
 
         console.log()
 
-        // sort the full list alphabetically
-        fullList = fullList.sort()
-
+        fullList = fullList.sort().map(line => `0.0.0.0 ${line}`)
         const comment = generateComment(name, fullList)
         const output = `${comment}\n${fullList.join('\n')}`
+        const fullListNL = fullList.map(line => line.replace('0.0.0.0', '').trim())
+        const commentNL = generateComment(`${name} (NL)`, fullListNL)
+        const outputNL = `${commentNL}\n${fullListNL.join('\n')}`
+        const fullListAdguard = fullList.map(line => `||${line}^`)
+        const commentAdguard = generateComment(`${name} (Adguard)`, fullListAdguard)
+        const outputAdguard = `${commentAdguard}\n${fullListAdguard.join('\n')}`
 
         await fs.outputFile(path.join(__dirname, 'lists', `${name}.txt`), output)
+        await fs.outputFile(path.join(__dirname, 'lists', `${name}-nl.txt`), outputNL)
+        await fs.outputFile(path.join(__dirname, 'lists', `${name}-adguard.txt`), outputAdguard)
     }
 }
 
