@@ -65,7 +65,7 @@ async function main() {
         const commentNL = generateComment(`${name} (NL)`, fullListNL)
         const outputNL = `${commentNL}\n${fullListNL.join('\n')}`
 
-        const fullListAdguard = fullList.map(line => `||${line.replace('0.0.0.0', '')}^`.trim())
+        const fullListAdguard = fullList.map(line => `||${line.replace('0.0.0.0', '').trim()}^`)
         const commentAdguard = generateComment(`${name} (Adguard)`, fullListAdguard)
         const outputAdguard = `${commentAdguard}\n${fullListAdguard.join('\n')}`
 
