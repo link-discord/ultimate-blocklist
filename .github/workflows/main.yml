@@ -6,13 +6,16 @@ on:
     - cron: "0 * * * *"
 
 jobs:
-  build:
+  run:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
         node-version: [16]
     steps:
       - uses: actions/checkout@v2
+
+      - name: Use CI folder
+        run: cd ci
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.0.1
@@ -24,9 +27,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
-
-      - name: Use CI folder
-        run: cd ci
 
       - name: Install dependencies
         run: pnpm install
