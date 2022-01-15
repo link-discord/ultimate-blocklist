@@ -35,11 +35,11 @@ function generateComment(name, list) {
 }
 
 async function main() {
-    const files = await fs.readdir(path.join(__dirname, 'lists'))
+    const files = await fs.readdir(path.join(__dirname, 'urls'))
 
     for (const file of files) {
         const name = file.replace('.txt', '')
-        const listsFile = await fs.readFile(path.join(__dirname, 'lists', file), 'utf8')
+        const listsFile = await fs.readFile(path.join(__dirname, 'urls', file), 'utf8')
         const lists = listsFile.split('\n')
 
         console.log(`Going through the lists for ${name}\n`)
@@ -63,7 +63,7 @@ async function main() {
         const comment = generateComment(name, fullList)
         const output = `${comment}\n${fullList.join('\n')}`
 
-        await fs.writeFile(path.join(__dirname, '..', `${name}.txt`), output)
+        await fs.writeFile(path.join(__dirname, 'lists', `${name}.txt`), output)
     }
 }
 

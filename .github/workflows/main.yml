@@ -14,9 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Use CI folder
-        run: cd ci
-
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.0.1
         with:
