@@ -19,6 +19,7 @@
   "homepage": "https://github.com/link-discord/ultimate-blocklist#readme",
   "dependencies": {
     "axios": "^0.24.0",
-    "common-tags": "^1.8.2"
+    "common-tags": "^1.8.2",
+    "fs-extra": "^10.0.0"
   }
 }

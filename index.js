@@ -1,5 +1,5 @@
 const path = require('path')
-const fs = require('fs/promises')
+const fs = require('fs-extra')
 const { stripIndents } = require('common-tags')
 const { default: axios } = require('axios')
 
@@ -63,8 +63,8 @@ async function main() {
         const comment = generateComment(name, fullList)
         const output = `${comment}\n${fullList.join('\n')}`
 
-        await fs.writeFile(path.join(__dirname, 'lists', `${name}.txt`), output)
+        await fs.outputFile(path.join(__dirname, 'lists', `${name}.txt`), output)
     }
 }
 
-main().then(() => { console.log('Finished merging & updating all the list files') })
+main().then(() => { console.log('Finished updating all the list files') })
