@@ -59,7 +59,7 @@ async function main() {
         console.log()
 
         fullList = fullList.sort()
-        fullList = fullList.filter(line => isValidDomain(line) && !line.endsWith('рф'))
+        fullList = fullList.filter(line => isValidDomain(line) && !line.includes('ф'))
         fullList = fullList.map(line => `0.0.0.0 ${line}`)
 
         const comment = generateComment(name, fullList)
