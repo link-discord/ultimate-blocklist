@@ -1,4 +1,5 @@
 https://github.com/d43m0nhLInt3r/socialblocklists/raw/master/Tracking/trackingblocklist.txt
+https://raw.githubusercontent.com/kboghdady/youTube_ads_4_pi-hole/master/youtubelist.txt
 https://blocklistproject.github.io/Lists/tracking.txt
 https://blocklistproject.github.io/Lists/ads.txt
 https://blocklistproject.github.io/Lists/malware.txt

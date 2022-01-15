@@ -20,6 +20,7 @@ If you still wanna access facebook or crypto related sites then you can use the 
 ### Main Blocklist
 
 -   [Social Network Trackers](https://github.com/d43m0nhLInt3r/socialblocklists/raw/master/Tracking/trackingblocklist.txt)
+-   [Youtube Ads](https://raw.githubusercontent.com/kboghdady/youTube_ads_4_pi-hole/master/youtubelist.txt)
 -   [Trackers](https://blocklistproject.github.io/Lists/tracking.txt)
 -   [Ads](https://blocklistproject.github.io/Lists/ads.txt)
 -   [Malware](https://blocklistproject.github.io/Lists/malware.txt)
@@ -37,6 +38,7 @@ If you still wanna access facebook or crypto related sites then you can use the 
 ### Base Blocklist
 
 -   [Social Network Trackers](https://github.com/d43m0nhLInt3r/socialblocklists/raw/master/Tracking/trackingblocklist.txt)
+-   [Youtube Ads](https://raw.githubusercontent.com/kboghdady/youTube_ads_4_pi-hole/master/youtubelist.txt)
 -   [Trackers](https://blocklistproject.github.io/Lists/tracking.txt)
 -   [Ads](https://blocklistproject.github.io/Lists/ads.txt)
 -   [Malware](https://blocklistproject.github.io/Lists/malware.txt)
