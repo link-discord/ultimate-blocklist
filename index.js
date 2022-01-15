@@ -1,5 +1,6 @@
 const path = require('path')
 const fs = require('fs-extra')
+const isValidDomain = require('is-valid-domain')
 const { stripIndents } = require('common-tags')
 const { default: axios } = require('axios')
 
@@ -57,7 +58,10 @@ async function main() {
 
         console.log()
 
-        fullList = fullList.sort().map(line => `0.0.0.0 ${line}`)
+        fullList = fullList.sort()
+        fullList = fullList.filter(line => isValidDomain(line))
+        fullList = fullList.map(line => `0.0.0.0 ${line}`)
+
         const comment = generateComment(name, fullList)
         const output = `${comment}\n${fullList.join('\n')}`
 

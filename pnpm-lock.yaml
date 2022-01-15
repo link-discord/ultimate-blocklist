@@ -4,11 +4,13 @@ specifiers:
   axios: ^0.24.0
   common-tags: ^1.8.2
   fs-extra: ^10.0.0
+  is-valid-domain: ^0.1.5
 
 dependencies:
   axios: 0.24.0
   common-tags: 1.8.2
   fs-extra: 10.0.0
+  is-valid-domain: 0.1.5
 
 packages:
 
@@ -48,12 +50,23 @@ packages:
     resolution: {integrity: sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==}
     dev: false
 
+  /is-valid-domain/0.1.5:
+    resolution: {integrity: sha512-ilzfGo1kXzoVpSLplJWOexoiuAc6mRK+vPlNAeEPVJ29RagETpCz0izg6CZfY72DCuA+PCrEAEJeaecRLMNq5Q==}
+    dependencies:
+      punycode: 2.1.1
+    dev: false
+
   /jsonfile/6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
     dependencies:
       universalify: 2.0.0
     optionalDependencies:
       graceful-fs: 4.2.9
+    dev: false
+
+  /punycode/2.1.1:
+    resolution: {integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==}
+    engines: {node: '>=6'}
     dev: false
 
   /universalify/2.0.0:
