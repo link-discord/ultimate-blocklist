@@ -1,0 +1,24 @@
+{
+  "name": "ultimate-blocklist",
+  "version": "1.0.0",
+  "description": "The ultimate blocklist with over 1 million domains",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/link-discord/ultimate-blocklist.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/link-discord/ultimate-blocklist/issues"
+  },
+  "homepage": "https://github.com/link-discord/ultimate-blocklist#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "common-tags": "^1.8.2"
+  }
+}
