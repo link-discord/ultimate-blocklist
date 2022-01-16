@@ -3,7 +3,9 @@ const fs = require('fs-extra')
 const isValidDomain = require('is-valid-domain')
 const prettier = require('prettier')
 const { stripIndents } = require('common-tags')
-const { default: axios } = require('axios')
+const { default: fetch } = require('got-fetch')
+
+const cache = new Map()
 
 let markdown = fs.readFileSync('TEMPLATE.md', 'utf8')
 
@@ -78,8 +80,16 @@ async function main() {
         for (const list of lists) {
             console.log(`Fetching ${list}`)
 
-            const { data } = await axios.get(list)
+            if (cache.has(list)) {
+                fullList = fullList.concat(cache.get(list))
+                continue
+            }
+
+            const res = await fetch(list)
+            const data = await res.text()
             const cleanedList = cleanList(data.split('\n'))
+
+            cache.set(list, cleanedList)
 
             fullList = fullList.concat(cleanedList)
         }
