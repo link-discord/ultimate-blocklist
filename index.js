@@ -9,7 +9,7 @@ let { cache, lastUpdate } = fs.readJSONSync(path.join(__dirname, 'cache', 'cache
 
 // check if the last update was more than half an hour ago
 if (Date.now() - lastUpdate > 1800000) {
-    await fs.writeJSON(path.join(__dirname, 'cache', 'cache.json'), {
+    fs.writeJSONSync(path.join(__dirname, 'cache', 'cache.json'), {
         lastUpdate: Date.now(),
         cache: {},
     })
