@@ -5,18 +5,6 @@ const prettier = require('prettier')
 const { stripIndents } = require('common-tags')
 const { default: fetch } = require('got-fetch')
 
-let { cache, lastUpdate } = fs.readJSONSync(path.join(__dirname, 'cache', 'cache.json'))
-
-// check if the last update was more than half an hour ago
-if (Date.now() - lastUpdate > 1800000) {
-    fs.writeJSONSync(path.join(__dirname, 'cache', 'cache.json'), {
-        lastUpdate: Date.now(),
-        cache: {},
-    })
-
-    cache = {}
-}
-
 let markdown = fs.readFileSync('TEMPLATE.md', 'utf8')
 
 function cleanList(list) {
@@ -62,6 +50,18 @@ function generateComment(name, list) {
 }
 
 async function main() {
+    let { cache, lastUpdate } = await fs.readJSON(path.join(__dirname, 'cache', 'cache.json'))
+
+    // check if the last update was more than half an hour ago
+    if (Date.now() - lastUpdate > 1800000) {
+        await fs.writeJSON(path.join(__dirname, 'cache', 'cache.json'), {
+            lastUpdate: Date.now(),
+            cache: {}
+        })
+
+        cache = {}
+    }
+
     const files = await fs.readdir(path.join(__dirname, 'urls'))
 
     for (const file of files) {
