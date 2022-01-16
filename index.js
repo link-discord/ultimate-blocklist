@@ -56,9 +56,13 @@ async function main() {
 
         console.log()
 
+        console.log('Sorting...')
         fullList = fullList.sort()
+        console.log('Validating domains...')
         fullList = fullList.filter(line => isValidDomain(line) && !line.includes('ф'))
-        fullList = fullList.filter((line, index) => fullList.indexOf(line) === index)
+        console.log('Removing duplicates...')
+        fullList = [...new Set(fullList)]
+        console.log('Removing empty lines...')
         fullList = fullList.map(line => `0.0.0.0 ${line}`)
 
         const comment = generateComment(name, fullList)
@@ -71,6 +75,8 @@ async function main() {
         const fullListAdguard = fullList.map(line => `||${line.replace('0.0.0.0', '').trim()}^`)
         const commentAdguard = generateComment(`${name} (Adguard)`, fullListAdguard).replace(/#/g, '!')
         const outputAdguard = `${commentAdguard}\n${fullListAdguard.join('\n')}`
+
+        console.log(`Writing ${name} to file...`)
 
         await fs.outputFile(path.join(__dirname, 'lists', `${name}.txt`), output)
         await fs.outputFile(path.join(__dirname, 'lists', `${name}-nl.txt`), outputNL)
