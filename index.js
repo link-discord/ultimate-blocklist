@@ -5,7 +5,7 @@ const prettier = require('prettier')
 const { stripIndents } = require('common-tags')
 const { default: fetch } = require('got-fetch')
 
-let { cache, lastUpdate } = await fs.readJSON(path.join(__dirname, 'cache', 'cache.json'))
+let { cache, lastUpdate } = fs.readJSONSync(path.join(__dirname, 'cache', 'cache.json'))
 
 // check if the last update was more than half an hour ago
 if (Date.now() - lastUpdate > 1800000) {
