@@ -13,8 +13,6 @@ function cleanList(list) {
     list = list.map(line => line.replace('0.0.0.0', ''))
     // Trim whitespace at beginning and end of each line
     list = list.map(line => line.trim())
-    // Remove all duplicates
-    list = [...new Set(list)]
     // Return the new list
     return list
 }
