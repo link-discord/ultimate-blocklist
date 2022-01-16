@@ -5,7 +5,17 @@ const prettier = require('prettier')
 const { stripIndents } = require('common-tags')
 const { default: fetch } = require('got-fetch')
 
-const cache = new Map()
+let { cache, lastUpdate } = await fs.readJSON(path.join(__dirname, 'cache', 'cache.json'))
+
+// check if the last update was more than half an hour ago
+if (Date.now() - lastUpdate > 1800000) {
+    await fs.writeJSON(path.join(__dirname, 'cache', 'cache.json'), {
+        lastUpdate: Date.now(),
+        cache: {},
+    })
+
+    cache = {}
+}
 
 let markdown = fs.readFileSync('TEMPLATE.md', 'utf8')
 
@@ -78,7 +88,7 @@ async function main() {
         let fullList = []
 
         for (const list of lists) {
-            if (cache.has(list)) {
+            if (cache[list]) {
                 console.log(`Retrieved ${list} from cache.`)
                 fullList = fullList.concat(cache.get(list))
                 continue
@@ -90,7 +100,7 @@ async function main() {
             const data = await res.text()
             const cleanedList = cleanList(data.split('\n'))
 
-            cache.set(list, cleanedList)
+            cache[list] = cleanedList
 
             fullList = fullList.concat(cleanedList)
         }
@@ -131,12 +141,21 @@ async function main() {
 
     console.log('Writing to README...\n')
 
+    const allLists = Object.values(cache).flat()
+
+    markdown.replace('${entries}', allLists.length.toLocaleString('de-DE'))
+
     const formattedMarkdown = prettier.format(markdown, {
         parser: 'markdown',
         printWidth: 120
     })
 
     await fs.outputFile('README.md', formattedMarkdown)
+
+    const obj = { lastUpdate: Date.now(), cache }
+
+    // Save the cache
+    await fs.writeJSON(path.join(__dirname, 'cache', 'cache.json'), obj)
 }
 
 main().then(() => {
