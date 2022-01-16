@@ -3,7 +3,7 @@
 [Where are the blocklist files?](https://github.com/link-discord/ultimate-blocklist/tree/main/lists)
 
 The ultimate blocklist is a combination of many blocklists merged into a single file.
-It includes over 1 million entries and counting.
+It includes over ${entries} domains and counting.
 
 This list blocks ads, malware, phishing, ransomware and tracker.
 
