@@ -3,7 +3,7 @@
 [Where are the blocklist files?](https://github.com/link-discord/ultimate-blocklist/tree/main/lists)
 
 The ultimate blocklist is a combination of many blocklists merged into a single file.
-It includes over 1 million entries, and is updated daily.
+It includes over 1 million entries and counting.
 
 This list blocks ads, malware, phishing, ransomware and tracker.
 
@@ -14,7 +14,7 @@ This list gets updated every hour automatically using Github Actions.
 The main.txt list blocks vape, drug and gambling sites and any malicious crypto sites (including legit ones in some cases).
 The list also blocks facebook for privacy reasons.
 
-If you still wanna access facebook or crypto related sites then you can use the basic.txt list.
+If you still wanna access the sites above then you need to use the basic.txt list.
 
 ## Lists Used
 
@@ -23,16 +23,13 @@ If you still wanna access facebook or crypto related sites then you can use the 
 -   <https://adaway.org/hosts.txt>
 -   <https://bitbucket.org/ethanr/dns-blacklists/raw/8575c9f96e5b4a1308f2f12394abd86d0927a4a0/bad_lists/Mandiant_APT1_Report_Appendix_D.txt>
 -   <https://blocklistproject.github.io/Lists/ads.txt>
--   <https://blocklistproject.github.io/Lists/drugs.txt>
 -   <https://blocklistproject.github.io/Lists/fraud.txt>
--   <https://blocklistproject.github.io/Lists/gambling.txt>
 -   <https://blocklistproject.github.io/Lists/malware.txt>
 -   <https://blocklistproject.github.io/Lists/phishing.txt>
 -   <https://blocklistproject.github.io/Lists/ransomware.txt>
 -   <https://blocklistproject.github.io/Lists/redirect.txt>
 -   <https://blocklistproject.github.io/Lists/scam.txt>
 -   <https://blocklistproject.github.io/Lists/tracking.txt>
--   <https://blocklistproject.github.io/Lists/vaping.txt>
 -   <https://github.com/d43m0nhLInt3r/socialblocklists/raw/master/Tracking/trackingblocklist.txt>
 -   <https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt>
 -   <https://hostfiles.frogeye.fr/firstparty-trackers-hosts.txt>
