@@ -1,8 +1,11 @@
 const path = require('path')
 const fs = require('fs-extra')
 const isValidDomain = require('is-valid-domain')
+const prettier = require('prettier')
 const { stripIndents } = require('common-tags')
 const { default: axios } = require('axios')
+
+let markdown = fs.readFileSync('TEMPLATE.md', 'utf8')
 
 function cleanList(list) {
     // Filter out empty lines
@@ -17,6 +20,17 @@ function cleanList(list) {
     list = list.map(line => line.trim())
     // Return the new list
     return list
+}
+
+function generateMarkdownList(title, list) {
+    title = title.charAt(0).toUpperCase() + title.slice(1)
+
+    markdown += '\n\n'
+    markdown += stripIndents`
+        ### ${title} Blocklist
+
+        ${list.map(line => `- ${line}`).join('\n')}
+    `
 }
 
 function generateComment(name, list) {
@@ -41,7 +55,21 @@ async function main() {
     for (const file of files) {
         const name = file.replace('.txt', '')
         const listsFile = await fs.readFile(path.join(__dirname, 'urls', file), 'utf8')
-        const lists = listsFile.split('\n')
+        let lists = listsFile.split('\n')
+
+        console.log(`Sorting the ${name} list...`)
+
+        lists = lists.sort()
+
+        console.log('Removing duplicates...')
+
+        lists = [...new Set(lists)]
+
+        console.log(`Overwriting the ${file} file...`)
+
+        await fs.outputFile(path.join(__dirname, 'urls', file), lists.join('\n'))
+
+        generateMarkdownList(name, lists)
 
         console.log(`Going through the lists for ${name}\n`)
 
@@ -59,12 +87,17 @@ async function main() {
         console.log()
 
         console.log('Sorting...')
+
         fullList = fullList.sort()
+
         console.log('Validating domains...')
+
         fullList = fullList.filter(line => isValidDomain(line) && !line.includes('ф'))
+
         console.log('Removing duplicates...')
+
         fullList = [...new Set(fullList)]
-        console.log('Removing empty lines...')
+
         fullList = fullList.map(line => `0.0.0.0 ${line}`)
 
         const comment = generateComment(name, fullList)
@@ -84,6 +117,15 @@ async function main() {
         await fs.outputFile(path.join(__dirname, 'lists', `${name}-nl.txt`), outputNL)
         await fs.outputFile(path.join(__dirname, 'lists', `${name}-adguard.txt`), outputAdguard)
     }
+
+    console.log('Writing to README...\n')
+
+    const formattedMarkdown = prettier.format(markdown, {
+        parser: 'markdown',
+        printWidth: 120
+    })
+
+    await fs.outputFile('README.md', formattedMarkdown)
 }
 
 main().then(() => {

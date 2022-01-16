@@ -5,12 +5,14 @@ specifiers:
   common-tags: ^1.8.2
   fs-extra: ^10.0.0
   is-valid-domain: ^0.1.5
+  prettier: ^2.5.1
 
 dependencies:
   axios: 0.24.0
   common-tags: 1.8.2
   fs-extra: 10.0.0
   is-valid-domain: 0.1.5
+  prettier: 2.5.1
 
 packages:
 
@@ -62,6 +64,12 @@ packages:
       universalify: 2.0.0
     optionalDependencies:
       graceful-fs: 4.2.9
+    dev: false
+
+  /prettier/2.5.1:
+    resolution: {integrity: sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: false
 
   /punycode/2.1.1:
