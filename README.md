@@ -6,13 +6,12 @@ The ultimate blocklist is a combination of many blocklists merged into a single 
 It includes over 1 million entries, and is updated daily.
 
 This list blocks ads, malware, phishing, ransomware and tracker.
-This list also blocks vape, drug and gambling sites.
 
 This list gets updated every hour automatically using Github Actions.
 
 ## Disclaimer
 
-The main.txt list will block any malicious crypto sites (including legit ones in some cases).
+The main.txt list blocks vape, drug and gambling sites and any malicious crypto sites (including legit ones in some cases).
 The list also blocks facebook for privacy reasons.
 
 If you still wanna access facebook or crypto related sites then you can use the basic.txt list.
@@ -70,4 +69,7 @@ If you still wanna access facebook or crypto related sites then you can use the 
 Everything in the basic blocklist plus:
 
 -   <https://blocklistproject.github.io/Lists/crypto.txt>
+-   <https://blocklistproject.github.io/Lists/drugs.txt>
+-   <https://blocklistproject.github.io/Lists/gambling.txt>
+-   <https://blocklistproject.github.io/Lists/vaping.txt>
 -   <https://blocklistproject.github.io/Lists/facebook.txt>

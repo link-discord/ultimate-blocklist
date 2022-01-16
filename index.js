@@ -60,6 +60,7 @@ async function main() {
 
         fullList = fullList.sort()
         fullList = fullList.filter(line => isValidDomain(line) && !line.includes('ф'))
+        fullList = fullList.filter((line, index) => fullList.indexOf(line) === index)
         fullList = fullList.map(line => `0.0.0.0 ${line}`)
 
         const comment = generateComment(name, fullList)
