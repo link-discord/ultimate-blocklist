@@ -14,7 +14,7 @@ This list gets updated every hour automatically using Github Actions.
 The main.txt list blocks vape, drug and gambling sites and any malicious crypto sites (including legit ones in some cases).
 The list also blocks facebook for privacy reasons.
 
-If you still wanna access facebook or crypto related sites then you can use the basic.txt list.
+If you still wanna access the sites above then you need to use the basic.txt list.
 
 ## Lists Used
 
