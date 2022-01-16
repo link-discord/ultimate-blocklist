@@ -78,12 +78,13 @@ async function main() {
         let fullList = []
 
         for (const list of lists) {
-            console.log(`Fetching ${list}`)
-
             if (cache.has(list)) {
+                console.log(`Retrieved ${list} from cache.`)
                 fullList = fullList.concat(cache.get(list))
                 continue
             }
+
+            console.log(`Fetching ${list}`)
 
             const res = await fetch(list)
             const data = await res.text()
