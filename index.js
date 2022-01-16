@@ -90,7 +90,7 @@ async function main() {
         for (const list of lists) {
             if (cache[list]) {
                 console.log(`Retrieved ${list} from cache.`)
-                fullList = fullList.concat(cache.get(list))
+                fullList = fullList.concat(cache[list])
                 continue
             }
 
