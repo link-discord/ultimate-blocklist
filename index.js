@@ -11,6 +11,8 @@ function cleanList(list) {
     list = list.filter(line => !line.startsWith('#'))
     // Remove all 0.0.0.0 entries
     list = list.map(line => line.replace('0.0.0.0', ''))
+    // Remove all 127.0.0.1 entries
+    list = list.map(line => line.replace('127.0.0.1', ''))
     // Trim whitespace at beginning and end of each line
     list = list.map(line => line.trim())
     // Return the new list
