@@ -76,7 +76,7 @@ async function main() {
         const commentAdguard = generateComment(`${name} (Adguard)`, fullListAdguard).replace(/#/g, '!')
         const outputAdguard = `${commentAdguard}\n${fullListAdguard.join('\n')}`
 
-        console.log(`Writing ${name} to file...`)
+        console.log(`Writing to file...\n`)
 
         await fs.outputFile(path.join(__dirname, 'lists', `${name}.txt`), output)
         await fs.outputFile(path.join(__dirname, 'lists', `${name}-nl.txt`), outputNL)
