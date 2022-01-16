@@ -141,10 +141,6 @@ async function main() {
 
     console.log('Writing to README...\n')
 
-    const allLists = Object.values(cache).flat()
-
-    markdown.replace('${entries}', allLists.length.toLocaleString('de-DE'))
-
     const formattedMarkdown = prettier.format(markdown, {
         parser: 'markdown',
         printWidth: 120
