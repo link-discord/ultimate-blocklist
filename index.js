@@ -6,6 +6,12 @@ const { stripIndents } = require('common-tags')
 const { default: fetch } = require('got-fetch')
 
 let markdown = fs.readFileSync('TEMPLATE.md', 'utf8')
+let whitelist = fs.readFileSync('whitelist.txt', 'utf8').trim().split('\n')
+
+whitelist = [...new Set(whitelist)]
+whitelist = whitelist.sort()
+
+fs.writeFileSync('whitelist.txt', whitelist.join('\n'))
 
 function cleanList(list) {
     // Filter out empty lines
@@ -18,16 +24,18 @@ function cleanList(list) {
     list = list.map(line => line.replace('127.0.0.1', ''))
     // Trim whitespace at beginning and end of each line
     list = list.map(line => line.trim())
+    // Remove dot at the end of each line
+    list = list.map(line => line.replace(/\.$/, ''))
     // Return the new list
     return list
 }
 
-function generateMarkdownList(title, list) {
+function generateMarkdownList(title, list, suffix = 'Blocklist') {
     title = title.charAt(0).toUpperCase() + title.slice(1)
 
     markdown += '\n\n'
     markdown += stripIndents`
-        ### ${title} Blocklist
+        ### ${title} ${suffix}
 
         ${list.map(line => `- ${line}`).join('\n')}
     `
@@ -90,6 +98,7 @@ async function main() {
         for (const list of lists) {
             if (cache[list]) {
                 console.log(`Retrieved ${list} from cache.`)
+
                 fullList = fullList.concat(cache[list])
                 continue
             }
@@ -119,6 +128,12 @@ async function main() {
 
         fullList = [...new Set(fullList)]
 
+        console.log('Removing whitelisted domains from the full list...')
+
+        fullList = fullList.filter(line => !whitelist.includes(line))
+
+        console.log('Appending 0.0.0.0 to the start of each line...')
+
         fullList = fullList.map(line => `0.0.0.0 ${line}`)
 
         const comment = generateComment(name, fullList)
@@ -138,6 +153,8 @@ async function main() {
         await fs.outputFile(path.join(__dirname, 'lists', `${name}-nl.txt`), outputNL)
         await fs.outputFile(path.join(__dirname, 'lists', `${name}-adguard.txt`), outputAdguard)
     }
+
+    generateMarkdownList('whitelist', whitelist.map(d => `https://${d}`), '(whitelist.txt)')
 
     console.log('Writing to README...\n')
 
