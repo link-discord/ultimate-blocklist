@@ -182,3 +182,8 @@ If you still wanna access the sites above then you need to use the basic.txt lis
 - https://zerodot1.gitlab.io/CoinBlockerLists/hosts_browser
 - https://zerodot1.gitlab.io/CoinBlockerLists/list.txt
 - https://zerodot1.gitlab.io/CoinBlockerLists/list_browser.txt
+
+### Whitelist (whitelist.txt)
+
+- https://bit.ly
+- https://www.bit.ly
