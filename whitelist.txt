@@ -1,4 +1,9 @@
 0.client-channel.google.com
+ow.ly
+t.ly
+tinyurl.com
+cdn.optimizely.com
+s.shopify.com
 1drv.com
 2.android.pool.ntp.org
 akamaihd.net
