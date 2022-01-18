@@ -14,7 +14,6 @@ https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt
 https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt
 https://hostfiles.frogeye.fr/firstparty-trackers-hosts.txt
 https://hostfiles.frogeye.fr/multiparty-trackers-hosts.txt
-https://hostsfile.org/Downloads/hosts.txt
 https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt
 https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext
 https://phishing.army/download/phishing_army_blocklist_extended.txt
@@ -56,7 +55,6 @@ https://someonewhocares.org/hosts/zero/hosts
 https://urlhaus.abuse.ch/downloads/hostfile
 https://v.firebog.net/hosts/AdguardDNS.txt
 https://v.firebog.net/hosts/Admiral.txt
-https://v.firebog.net/hosts/BillStearns.txt
 https://v.firebog.net/hosts/Easylist.txt
 https://v.firebog.net/hosts/Easyprivacy.txt
 https://v.firebog.net/hosts/Prigent-Ads.txt
@@ -64,7 +62,6 @@ https://v.firebog.net/hosts/Prigent-Crypto.txt
 https://v.firebog.net/hosts/static/w3kbl.txt
 https://winhelp2002.mvps.org/hosts.txt
 https://www.github.developerdan.com/hosts/lists/ads-and-tracking-extended.txt
-https://www.joewein.net/dl/bl/dom-bl-base.txt
 https://www.stopforumspam.com/downloads/toxic_domains_whole.txt
 https://www.technoy.de/lists/FireTVAds.txt
 https://www.technoy.de/lists/Session-Replay.txt
