@@ -36,7 +36,6 @@ If you still wanna access the sites above then you need to use the basic.txt lis
 - https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt
 - https://hostfiles.frogeye.fr/firstparty-trackers-hosts.txt
 - https://hostfiles.frogeye.fr/multiparty-trackers-hosts.txt
-- https://hostsfile.org/Downloads/hosts.txt
 - https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt
 - https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext
 - https://phishing.army/download/phishing_army_blocklist_extended.txt
@@ -78,7 +77,6 @@ If you still wanna access the sites above then you need to use the basic.txt lis
 - https://urlhaus.abuse.ch/downloads/hostfile
 - https://v.firebog.net/hosts/AdguardDNS.txt
 - https://v.firebog.net/hosts/Admiral.txt
-- https://v.firebog.net/hosts/BillStearns.txt
 - https://v.firebog.net/hosts/Easylist.txt
 - https://v.firebog.net/hosts/Easyprivacy.txt
 - https://v.firebog.net/hosts/Prigent-Ads.txt
@@ -86,7 +84,6 @@ If you still wanna access the sites above then you need to use the basic.txt lis
 - https://v.firebog.net/hosts/static/w3kbl.txt
 - https://winhelp2002.mvps.org/hosts.txt
 - https://www.github.developerdan.com/hosts/lists/ads-and-tracking-extended.txt
-- https://www.joewein.net/dl/bl/dom-bl-base.txt
 - https://www.stopforumspam.com/downloads/toxic_domains_whole.txt
 - https://www.technoy.de/lists/FireTVAds.txt
 - https://www.technoy.de/lists/Session-Replay.txt
@@ -121,7 +118,6 @@ If you still wanna access the sites above then you need to use the basic.txt lis
 - https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt
 - https://hostfiles.frogeye.fr/firstparty-trackers-hosts.txt
 - https://hostfiles.frogeye.fr/multiparty-trackers-hosts.txt
-- https://hostsfile.org/Downloads/hosts.txt
 - https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt
 - https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext
 - https://phishing.army/download/phishing_army_blocklist_extended.txt
@@ -163,7 +159,6 @@ If you still wanna access the sites above then you need to use the basic.txt lis
 - https://urlhaus.abuse.ch/downloads/hostfile
 - https://v.firebog.net/hosts/AdguardDNS.txt
 - https://v.firebog.net/hosts/Admiral.txt
-- https://v.firebog.net/hosts/BillStearns.txt
 - https://v.firebog.net/hosts/Easylist.txt
 - https://v.firebog.net/hosts/Easyprivacy.txt
 - https://v.firebog.net/hosts/Prigent-Ads.txt
@@ -171,7 +166,6 @@ If you still wanna access the sites above then you need to use the basic.txt lis
 - https://v.firebog.net/hosts/static/w3kbl.txt
 - https://winhelp2002.mvps.org/hosts.txt
 - https://www.github.developerdan.com/hosts/lists/ads-and-tracking-extended.txt
-- https://www.joewein.net/dl/bl/dom-bl-base.txt
 - https://www.stopforumspam.com/downloads/toxic_domains_whole.txt
 - https://www.technoy.de/lists/FireTVAds.txt
 - https://www.technoy.de/lists/Session-Replay.txt
@@ -309,6 +303,7 @@ If you still wanna access the sites above then you need to use the basic.txt lis
 - https://onedrive.live.com
 - https://outlook.live.com
 - https://outlook.office365.com
+- https://ow.ly
 - https://pings.conviva.com
 - https://placehold.it
 - https://placeholdit.imgix.net
@@ -325,6 +320,7 @@ If you still wanna access the sites above then you need to use the basic.txt lis
 - https://res.cloudinary.com
 - https://s.gateway.messenger.live.com
 - https://s.marketwatch.com
+- https://s.shopify.com
 - https://s.youtube.com
 - https://s.ytimg.com
 - https://s1.wp.com
@@ -341,6 +337,7 @@ If you still wanna access the sites above then you need to use the basic.txt lis
 - https://staging.plex.tv
 - https://status.plex.tv
 - https://t.co
+- https://t.ly
 - https://t0.ssl.ak.dynamic.tiles.virtualearth.net
 - https://t0.ssl.ak.tiles.virtualearth.net
 - https://tawk.to
