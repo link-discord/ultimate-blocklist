@@ -16,12 +16,15 @@ fs.writeFileSync('whitelist.txt', whitelist.join('\n'))
 function cleanList(list) {
     // Filter out empty lines
     list = list.filter(line => line.length > 0)
-    // Filter out comments that start with #
-    list = list.filter(line => !line.startsWith('#'))
+    // Filter out comments
+    list = list.filter(line => !line.startsWith('#') && !line.startsWith('!'))
     // Remove all 0.0.0.0 entries
     list = list.map(line => line.replace('0.0.0.0', ''))
     // Remove all 127.0.0.1 entries
     list = list.map(line => line.replace('127.0.0.1', ''))
+    // Remove adguard stuff
+    list = list.map(line => line.startsWith('||') ? line.replace('||', '') : line)
+    liar = list.map(line => line.endsWith('^') ? line.replace('^', '') : line)
     // Trim whitespace at beginning and end of each line
     list = list.map(line => line.trim())
     // Remove dot at the end of each line
