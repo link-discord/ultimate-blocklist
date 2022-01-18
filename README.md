@@ -22,6 +22,7 @@ If you still wanna access the sites above then you need to use the basic.txt lis
 
 - http://phishing.mailscanner.info/phishing.bad.sites.conf
 - https://adaway.org/hosts.txt
+- https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 - https://bitbucket.org/ethanr/dns-blacklists/raw/8575c9f96e5b4a1308f2f12394abd86d0927a4a0/bad_lists/Mandiant_APT1_Report_Appendix_D.txt
 - https://blocklistproject.github.io/Lists/ads.txt
 - https://blocklistproject.github.io/Lists/fraud.txt
@@ -99,6 +100,7 @@ If you still wanna access the sites above then you need to use the basic.txt lis
 
 - http://phishing.mailscanner.info/phishing.bad.sites.conf
 - https://adaway.org/hosts.txt
+- https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 - https://bitbucket.org/ethanr/dns-blacklists/raw/8575c9f96e5b4a1308f2f12394abd86d0927a4a0/bad_lists/Mandiant_APT1_Report_Appendix_D.txt
 - https://blocklistproject.github.io/Lists/ads.txt
 - https://blocklistproject.github.io/Lists/crypto.txt
